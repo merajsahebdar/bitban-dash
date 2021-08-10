@@ -7,6 +7,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx}\"",
+    "codegen": "graphql-codegen --config codegen.yml",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -16,17 +17,30 @@
     ]
   },
   "dependencies": {
+    "@apollo/client": "^3.4.5",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
+    "apollo-link-token-refresh": "^0.3.2",
+    "cookie": "^0.4.1",
+    "isomorphic-unfetch": "^3.1.0",
+    "jwt-decode": "^3.1.2",
     "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.3.0",
+    "@graphql-codegen/cli": "^2.0.1",
+    "@graphql-codegen/fragment-matcher": "^3.0.0",
+    "@graphql-codegen/introspection": "^2.0.0",
+    "@graphql-codegen/typescript": "^2.0.0",
+    "@graphql-codegen/typescript-operations": "^2.0.1",
+    "@graphql-codegen/typescript-react-apollo": "^3.0.0",
+    "@types/cookie": "^0.4.1",
     "@types/react": "^17.0.16",
     "eslint": "7.32.0",
     "eslint-config-next": "11.0.1",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
     "husky": "^7.0.0",
     "prettier": "^2.3.2"
   }

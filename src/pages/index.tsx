@@ -1,12 +1,14 @@
-import { NextPage } from 'next';
 import { Fragment } from 'react';
+
+import { withViewer } from '../higher-orders';
+import { RegeetPage } from '../interfaces';
 
 /**
  * Home
  */
-const Home: NextPage = () => {
+const Home: RegeetPage = () => {
   return <Fragment />;
 };
 
 // Default Export
-export default Home;
+export default withViewer(Home);

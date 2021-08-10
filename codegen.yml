@@ -1,0 +1,18 @@
+overwrite: true
+schema:
+  - src/schemas/remote.graphql
+  - src/schemas/client.graphql
+documents:
+  - src/queries/*.graphql
+  - src/mutations/*.graphql
+generates:
+  src/apis/graphql.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+      - "fragment-matcher"
+hooks:
+  afterOneFileWrite:
+    - eslint --fix
+    - prettier --write

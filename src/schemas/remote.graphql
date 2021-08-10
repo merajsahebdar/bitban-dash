@@ -1,0 +1,118 @@
+# v0.0.*
+
+scalar DateTime
+
+# ====
+# Node
+# ----
+interface Node {
+  id: ID!
+}
+
+# ====
+# User
+# ----
+
+type User implements Node {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  removedAt: DateTime
+  isActive: Boolean!
+  isBanned: Boolean!
+}
+
+# ====
+# Auth
+# ----
+
+type Auth {
+  accessToken: String!
+  user: User!
+}
+
+# ==========
+# Repository
+# ----------
+
+type Repository {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  removedAt: DateTime
+  address: String!
+}
+
+# =============
+# Sign Up Input
+# -------------
+
+input SignUpInput {
+  password: String!
+  passwordConfirm: String!
+  domain: SignUpDomainInput!
+  primaryEmail: SignUpPrimaryEmailInput!
+}
+
+input SignUpPrimaryEmailInput {
+  address: String!
+}
+
+input SignUpDomainInput {
+  name: String!
+  address: String!
+}
+
+# =============
+# Sign In Input
+# -------------
+
+input SignInInput {
+  identifier: String!
+  password: String!
+}
+
+# =======================
+# Create Repository Input
+# -----------------------
+
+input CreateRepositoryInput {
+  address: String!
+}
+
+# =====
+# Query
+# -----
+
+type Query {
+  """
+  Returns an existing resource using its node identifier.
+  """
+  node(id: ID!): Node
+}
+
+# ========
+# Mutation
+# --------
+
+type Mutation {
+  """
+  Creates a new user account using the provided credentials and profile.
+  """
+  signUp(input: SignUpInput!): Auth!
+
+  """
+  Authenticates the user using the provided credentials.
+  """
+  signIn(input: SignInInput!): Auth!
+
+  """
+  Generates a new access token using the current refresh token stored in cookies.
+  """
+  refreshToken: String!
+
+  """
+  Creates a new git repository using the provided input.
+  """
+  createRepository(input: CreateRepositoryInput!): Repository!
+}
