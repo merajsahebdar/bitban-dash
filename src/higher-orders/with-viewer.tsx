@@ -4,7 +4,7 @@ import { createContext } from 'react';
 
 import { ViewerDocument, ViewerQuery, ViewerQueryVariables } from '../apis';
 import { SIGN_IN_URL } from '../constants';
-import { RegeetPage } from '../interfaces';
+import { BitBanPage } from '../interfaces';
 import { getComponentDisplayName } from '../utils';
 import { getAccessToken } from '../variables';
 
@@ -30,8 +30,8 @@ export const { Provider: LoginStateProvider, Consumer: LoginStateConsumer } = Lo
  * @param Page
  * @returns
  */
-export function withViewer(Page: RegeetPage<any, any>) {
-  const ViewerHoc: RegeetPage<LoginState, any> = ({ isLoggedIn, viewer, ...props }) => {
+export function withViewer(Page: BitBanPage<any, any>) {
+  const ViewerHoc: BitBanPage<LoginState, any> = ({ isLoggedIn, viewer, ...props }) => {
     // Render
     return (
       <LoginStateProvider value={{ isLoggedIn, viewer }}>

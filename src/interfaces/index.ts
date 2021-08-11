@@ -1,2 +1,2 @@
-export * from './regeet-app';
-export * from './regeet-page';
+export * from './bitban-app';
+export * from './bitban-page';

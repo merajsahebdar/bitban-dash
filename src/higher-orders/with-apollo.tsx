@@ -5,7 +5,7 @@
 import { ApolloProvider } from '@apollo/client';
 import { IncomingMessage } from 'http';
 
-import { RegeetApp } from '../interfaces';
+import { BitBanApp } from '../interfaces';
 import { initApolloClient } from '../states';
 import {
   fetchAccessToken,
@@ -47,7 +47,7 @@ async function getServerAccessToken(request?: IncomingMessage) {
  * @returns
  */
 export function withApollo({ ssrMode = true }: WithApolloOptions = {}) {
-  return (Component: RegeetApp) => {
+  return (Component: BitBanApp) => {
     const ApolloHoc = ({ apolloState, apolloClient, serverAccessToken, ...props }: any) => {
       if (!isServerSide() && serverAccessToken) {
         setAccessToken(serverAccessToken);

@@ -1,5 +1,5 @@
 {
-  "name": "@regeet/dash",
+  "name": "@bitban/dash",
   "version": "0.0.1",
   "scripts": {
     "dev": "next dev",

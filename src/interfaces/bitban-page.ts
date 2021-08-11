@@ -2,14 +2,14 @@ import { ApolloClient, NormalizedCacheObject } from '@apollo/client';
 import { NextComponentType, NextPageContext } from 'next';
 
 /**
- * Regeet Page Context
+ * BitBan Page Context
  */
-export interface RegeetPageContext extends NextPageContext {
+export interface BitBanPageContext extends NextPageContext {
   apolloClient: ApolloClient<NormalizedCacheObject>;
   serverAccessToken?: string;
 }
 
 /**
- * Regeet Page
+ * BitBan Page
  */
-export type RegeetPage<IP = {}, P = {}> = NextComponentType<RegeetPageContext, IP, P>;
+export type BitBanPage<IP = {}, P = {}> = NextComponentType<BitBanPageContext, IP, P>;

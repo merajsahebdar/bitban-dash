@@ -1,12 +1,12 @@
 import NextApp from 'next/app';
 
 import { withApollo } from '../higher-orders';
-import { RegeetApp } from '../interfaces';
+import { BitBanApp } from '../interfaces';
 
 /**
  * App
  */
-const App: RegeetApp = ({ Component, pageProps }) => {
+const App: BitBanApp = ({ Component, pageProps }) => {
   return <Component {...pageProps} />;
 };
 

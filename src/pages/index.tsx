@@ -1,12 +1,12 @@
 import { Fragment } from 'react';
 
 import { withViewer } from '../higher-orders';
-import { RegeetPage } from '../interfaces';
+import { BitBanPage } from '../interfaces';
 
 /**
  * Home
  */
-const Home: RegeetPage = () => {
+const Home: BitBanPage = () => {
   return <Fragment />;
 };
 

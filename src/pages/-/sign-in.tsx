@@ -1,11 +1,11 @@
 import { Fragment } from 'react';
 
-import { RegeetPage } from '../../interfaces';
+import { BitBanPage } from '../../interfaces';
 
 /**
  * Sign In
  */
-export const SignIn: RegeetPage = () => {
+export const SignIn: BitBanPage = () => {
   return <Fragment />;
 };
 
