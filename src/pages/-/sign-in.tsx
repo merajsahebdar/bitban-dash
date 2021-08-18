@@ -1,13 +1,22 @@
-import { Fragment } from 'react';
+import Head from 'next/head';
 
+import { SignIn } from '../../features/auth';
 import { BitBanPage } from '../../interfaces';
+import { PlainLayout } from '../../layouts';
 
 /**
- * Sign In
+ * Sign In Page
  */
-export const SignIn: BitBanPage = () => {
-  return <Fragment />;
+export const SignInPage: BitBanPage = () => {
+  return (
+    <PlainLayout>
+      <Head>
+        <title>BitBan &mdash; Sign In</title>
+      </Head>
+      <SignIn />
+    </PlainLayout>
+  );
 };
 
 // Default Export
-export default SignIn;
+export default SignInPage;

@@ -1,9 +1,6 @@
 query Viewer($id: ID!) {
   viewer: node(id: $id) {
     id
-    ...on User {
-      createdAt
-      updatedAt
-    }
+    ...Viewer
   }
 }

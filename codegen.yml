@@ -3,10 +3,14 @@ schema:
   - src/schemas/remote.graphql
   - src/schemas/client.graphql
 documents:
+  - src/fragments/*.graphql
   - src/queries/*.graphql
   - src/mutations/*.graphql
 generates:
   src/apis/graphql.tsx:
+    config:
+      dedupeFragments: true
+      exportFragmentSpreadSubTypes: true
     plugins:
       - "typescript"
       - "typescript-operations"
